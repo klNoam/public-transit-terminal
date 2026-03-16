@@ -2,8 +2,13 @@ import os
 import gspread
 from google.oauth2.service_account import Credentials
 from dotenv import load_dotenv
+from flask import Flask, jsonify
+from flask_cors import CORS
+from datetime import datetime
 
 load_dotenv()
+app = Flask(__name__)
+CORS(app)
 
 # Define the scope
 SCOPES = [
@@ -21,8 +26,12 @@ client = gspread.authorize(creds)
 
 # Open your spreadsheet by ID
 SHEET_ID = os.getenv("SHEET_ID")
-sheet = client.open_by_key(SHEET_ID).sheet1
+sheet1 = client.open_by_key(SHEET_ID).sheet1
 
-# Fetch all rows
-data = sheet.get_all_values()
-print(data)
+@app.route("/api/schedule")
+def get_schedule():
+    data = sheet1.get_all_values()
+    return jsonify(data)
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5001)

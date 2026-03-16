@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transit Display</title>
+</head>
+<body>
+  <h1>Bus Schedule</h1>
+  <div id="schedule"></div>
+
+  <script>
+    fetch("http://127.0.0.1:5001/api/schedule")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("schedule").innerText = JSON.stringify(data);
+      });
+  </script>
+
+  
+</body>
+</html>
