@@ -27,10 +27,16 @@ client = gspread.authorize(creds)
 # Open your spreadsheet by ID
 SHEET_ID = os.getenv("SHEET_ID")
 sheet1 = client.open_by_key(SHEET_ID).sheet1
+sheet2 = client.open_by_key(SHEET_ID).get_worksheet(1)
 
-@app.route("/api/schedule")
+@app.route("/api/schedule1")
 def get_schedule():
     data = sheet1.get_all_values()
+    return jsonify(data)
+
+@app.route("/api/schedule2")
+def get_schedule2():
+    data = sheet2.get_all_values()
     return jsonify(data)
 
 if __name__ == "__main__":

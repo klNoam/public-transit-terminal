@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Transit Display</title>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Connector Display</title>
 </head>
 <body>
-  <h1>Bus Schedule</h1>
-  <div id="schedule"></div>
+  <div id="app">
+    <div id="header">
+      <h1>Regents Drive Garage</h1>
+      <div id="clock"></div>
+    </div>
+    <div id="route1"></div>
+    <div id="route2"></div>
+  </div>
 
-  <script>
-    fetch("http://127.0.0.1:5001/api/schedule")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("schedule").innerText = JSON.stringify(data);
-      });
-  </script>
-
-  
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#route1, #route2 {
+  margin-top: 20px;
+}
+
+#arrows {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.stop {
+  background-color: #1a6dc2;
+  padding: 10px;
+  text-align: center;
+  min-width: 80px;
+  word-wrap: break-word;
+  white-space: normal;
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+  padding: 30px 30px;
+  width: 150px;
+}
+
+.empty-stop {
+  width: 30px;
+  min-width: 30px;
+  clip-path: polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%, 25% 50%);
+}
+
+#clock {
+  text-align: right;
+}
+
+#time {
+  display: block;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 20px;
+}
+
+#date {
+  display: block;
+  font-size: 1em;
+  color: #aaaaaa;
+}
