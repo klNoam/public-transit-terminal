@@ -1,7 +1,6 @@
 body {
   background-color: black;
   color: white;
-  font-family: Arial, sans-serif;
   padding: 20px;
 }
 
@@ -56,4 +55,8 @@ body {
   display: block;
   font-size: 1em;
   color: #aaaaaa;
+}
+
+h1{
+  font-size: 100px;
 }
